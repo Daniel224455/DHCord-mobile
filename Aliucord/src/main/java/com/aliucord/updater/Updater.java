@@ -3,13 +3,13 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.updater;
+package com.dhcord.updater;
 
 import android.content.Context;
 
-import com.aliucord.*;
-import com.aliucord.settings.AliucordPageKt;
-import com.aliucord.utils.ReflectUtils;
+import com.dhcord.*;
+import com.dhcord.settings.AliucordPageKt;
+import com.dhcord.utils.ReflectUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,14 +51,14 @@ public class Updater {
     private static Boolean isDiscordOutdated = null;
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
-    private static boolean fetchAliucordData() {
-        try (var req = new Http.Request("https://raw.githubusercontent.com/Aliucord/Aliucord/builds/data.json")) {
-            var res = req.execute().json(AliucordData.class);
-            isAliucordOutdated = !BuildConfig.GIT_REVISION.equals(res.aliucordHash);
+    private static boolean fetchDHCordData() {
+        try (var req = new Http.Request("https://raw.githubusercontent.com/Daniel224455/DHCord-mobile/main/builds/data.json")) {
+            var res = req.execute().json(DHCordData.class);
+            isDHCordOutdated = !BuildConfig.GIT_REVISION.equals(res.aliucordHash);
             isDiscordOutdated = Constants.DISCORD_VERSION < res.versionCode;
             return true;
         } catch (IOException ex) {
-            PluginUpdater.logger.error("Failed to check updates for Aliucord", ex);
+            PluginUpdater.logger.error("Failed to check updates for DHCord", ex);
             return false;
         }
     }
@@ -68,10 +68,10 @@ public class Updater {
      *
      * @return Whether latest remote Aliucord commit hash is newer than the installed one
      */
-    public static boolean isAliucordOutdated() {
+    public static boolean isDHCordOutdated() {
         if (usingDexFromStorage() || isUpdaterDisabled()) return false;
-        if (isAliucordOutdated == null && !fetchAliucordData()) return false;
-        return isAliucordOutdated;
+        if (isDHCordOutdated == null && !fetchDHCordData()) return false;
+        return isDHCordOutdated;
     }
 
     /**
@@ -81,7 +81,7 @@ public class Updater {
      */
     public static boolean isDiscordOutdated() {
         if (isUpdaterDisabled()) return false;
-        if (isDiscordOutdated == null && !fetchAliucordData()) return false;
+        if (isDiscordOutdated == null && !fetchDHCordData()) return false;
         return isDiscordOutdated;
     }
 
@@ -94,15 +94,15 @@ public class Updater {
     public static void updateAliucord(Context ctx) throws Throwable {
         Class<?> c;
         try {
-            c = Class.forName("com.aliucord.injector.InjectorKt");
+            c = Class.forName("com.dhcord.injector.InjectorKt");
         } catch (ClassNotFoundException e) {
-            c = Class.forName("com.aliucord.injector.Injector");
+            c = Class.forName("com.dhcord.injector.Injector");
         }
         ReflectUtils.invokeMethod(
             c,
             (Object) null,
-            "downloadLatestAliucordDex",
-            new File(ctx.getCodeCacheDir(), "Aliucord.zip")
+            "downloadLatestDHCordDex",
+            new File(ctx.getCodeCacheDir(), "DHCord.zip")
         );
     }
 
@@ -112,7 +112,7 @@ public class Updater {
      * @return Whether preference "disableAliucordUpdater" is set to true
      */
     public static boolean isUpdaterDisabled() {
-        return Main.settings.getBool("disableAliucordUpdater", false);
+        return Main.settings.getBool("disableDHCordUpdater", true);
     }
 
     /**
@@ -121,6 +121,6 @@ public class Updater {
      * @return Whether preference {@link AliucordPageKt#ALIUCORD_FROM_STORAGE_KEY} is set to true
      */
     public static boolean usingDexFromStorage() {
-        return Main.settings.getBool(AliucordPageKt.ALIUCORD_FROM_STORAGE_KEY, false);
+        return Main.settings.getBool(DHCordPageKt.ALIUCORD_FROM_STORAGE_KEY, false);
     }
 }
