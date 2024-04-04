@@ -1,12 +1,12 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
 // Based on https://github.com/Vendicated/AliucordPlugins/blob/9d4c4637d9ac4cb6137916145b8ecc8e8231bb53/TextFilePreview/src/main/kotlin/dev/vendicated/aliucordplugins/textfilepreview/AttachmentPreviewWidget.kt
 
-package com.aliucord.widgets
+package com.dhcord.widgets
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,11 +14,11 @@ import android.transition.TransitionManager
 import android.view.*
 import android.widget.*
 import androidx.core.content.ContextCompat
-import com.aliucord.PluginManager
-import com.aliucord.Utils
-import com.aliucord.utils.DimenUtils.dp
-import com.discord.utilities.color.ColorCompat
-import com.discord.utilities.file.FileUtilsKt
+import com.dhcord.PluginManager
+import com.dhcord.Utils
+import com.dhcord.utils.DimenUtils.dp
+import com.dhcord.utilities.color.ColorCompat
+import com.dhcord.utilities.file.FileUtilsKt
 import com.lytefast.flexinput.R
 import java.io.File
 
