@@ -1,15 +1,15 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.settings;
+package com.dhcord.settings;
 
-import static com.aliucord.updater.Updater.isAliucordOutdated;
-import static com.aliucord.updater.Updater.isDiscordOutdated;
-import static com.aliucord.updater.Updater.updateAliucord;
-import static com.aliucord.updater.Updater.usingDexFromStorage;
+import static com.dhcord.updater.Updater.isAliucordOutdated;
+import static com.dhcord.updater.Updater.isDiscordOutdated;
+import static com.dhcord.updater.Updater.updateAliucord;
+import static com.dhcord.updater.Updater.usingDexFromStorage;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -18,11 +18,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.aliucord.Utils;
-import com.aliucord.fragments.SettingsPage;
-import com.aliucord.updater.PluginUpdater;
-import com.aliucord.utils.DimenUtils;
-import com.aliucord.widgets.UpdaterPluginCard;
+import com.dhcord.Utils;
+import com.dhcord.fragments.SettingsPage;
+import com.dhcord.updater.PluginUpdater;
+import com.dhcord.utils.DimenUtils;
+import com.dhcord.widgets.UpdaterPluginCard;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.lytefast.flexinput.R;
@@ -44,26 +44,26 @@ public class Updater extends SettingsPage {
         Utils.threadPool.execute(() -> {
             Snackbar sb;
             if (usingDexFromStorage()) {
-                sb = Snackbar.make(getLinearLayout(), "Updater disabled due to using Aliucord from storage.", Snackbar.LENGTH_INDEFINITE);
+                sb = Snackbar.make(getLinearLayout(), "Updater disabled due to using DHCord from storage.", Snackbar.LENGTH_INDEFINITE);
             } else if (isDiscordOutdated()) {
                 sb = Snackbar
-                    .make(getLinearLayout(), "Your Base Discord is outdated. Please update using the installer.", BaseTransientBottomBar.LENGTH_INDEFINITE)
+                    .make(getLinearLayout(), "Your Discord version is outdated. Please update using the DHCord installer.", BaseTransientBottomBar.LENGTH_INDEFINITE)
                     .setAction("Open Installer", v -> {
                         var ctx = v.getContext();
                         var i = ctx.getPackageManager().getLaunchIntentForPackage("com.aliucord.installer");
                         if (i != null)
                             ctx.startActivity(i);
                         else
-                            Utils.showToast("Please install the Aliucord installer and try again.");
+                            Utils.showToast("Please install the DHCord installer and try again.");
                     });
             } else if (isAliucordOutdated()) {
                 sb = Snackbar
-                    .make(getLinearLayout(), "Your Aliucord is outdated.", Snackbar.LENGTH_INDEFINITE)
+                    .make(getLinearLayout(), "Your DHCord is outdated.", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Update", v -> Utils.threadPool.execute(() -> {
                         var ctx = v.getContext();
                         try {
                             updateAliucord(ctx);
-                            Utils.showToast("Successfully updated Aliucord.");
+                            Utils.showToast("Successfully updated DHCord.");
                             Snackbar rb = Snackbar
                                 .make(getLinearLayout(), "Restart to apply the update.", Snackbar.LENGTH_INDEFINITE)
                                 .setAction("Restart", e -> {
@@ -76,7 +76,7 @@ public class Updater extends SettingsPage {
                             rb.setActionTextColor(Color.BLACK);
                             rb.show();
                         } catch (Throwable th) {
-                            PluginUpdater.logger.errorToast("Failed to update Aliucord. Check the debug log for more info", th);
+                            PluginUpdater.logger.errorToast("Failed to update DHCord. Check the DebugLog for more info", th);
                         }
                     }));
             } else return;
