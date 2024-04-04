@@ -1,6 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
-import com.aliucord.gradle.AliucordExtension
+import com.dhcord.gradle.DHCordExtension
 import com.android.build.gradle.BaseExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -16,7 +16,7 @@ subprojects {
     apply {
         plugin("com.android.library")
         plugin("kotlin-android")
-        plugin("com.aliucord.gradle")
+        plugin("com.dhcord.gradle")
     }
 
     repositories {
