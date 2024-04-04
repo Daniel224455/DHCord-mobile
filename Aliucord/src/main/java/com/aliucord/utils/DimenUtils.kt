@@ -3,9 +3,9 @@
  * Copyright (c) 2021 Juby210
  * Licensed under the Open Software License version 3.0
  */
-package com.aliucord.utils
+package com.dhcord.utils
 
-import com.aliucord.Utils.appContext
+import com.dhcord.Utils.appContext
 import com.discord.utilities.dimen.DimenUtils
 
 object DimenUtils {
