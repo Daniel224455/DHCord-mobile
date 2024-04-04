@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of DHCord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.settings
+package com.dhcord.settings
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,8 +12,8 @@ import android.view.View
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
-import com.aliucord.*
-import com.aliucord.fragments.SettingsPage
+import com.dhcord.*
+import com.dhcord.fragments.SettingsPage
 import com.discord.stores.StoreStream
 import com.discord.views.CheckedSetting
 import com.lytefast.flexinput.R
@@ -21,7 +21,7 @@ import com.lytefast.flexinput.R
 // These keys aren't consistent because they were originally part of different modules
 const val AUTO_DISABLE_ON_CRASH_KEY = "autoDisableCrashingPlugins"
 const val AUTO_UPDATE_PLUGINS_KEY = "AC_plugins_auto_update_enabled"
-const val AUTO_UPDATE_ALIUCORD_KEY = "AC_aliucord_auto_update_enabled"
+const val AUTO_UPDATE_ALIUCORD_KEY = "AC_dhcord_auto_update_enabled"
 const val ALIUCORD_FROM_STORAGE_KEY = "AC_from_storage"
 
 class AliucordPage : SettingsPage() {
@@ -29,28 +29,28 @@ class AliucordPage : SettingsPage() {
     override fun onViewBound(view: View) {
         super.onViewBound(view)
 
-        setActionBarTitle("Aliucord")
-        setActionBarSubtitle("Aliucord Settings")
+        setActionBarTitle("DHCord")
+        setActionBarSubtitle("DHCord Settings")
 
         val ctx = view.context
 
-        addHeader(ctx, "Aliucord Settings")
+        addHeader(ctx, "DHCord Settings")
         addSwitch(ctx,
             AUTO_DISABLE_ON_CRASH_KEY,
             "Automatically disable plugins on crash",
             "When a plugin is found to be causing crashes, it will automatically be disabled",
             true
         )
-        addSwitch(ctx, AUTO_UPDATE_ALIUCORD_KEY, "Automatically update Aliucord", null)
-        addSwitch(ctx, AUTO_UPDATE_PLUGINS_KEY, "Automatically update plugins", null)
+        addSwitch(ctx, AUTO_UPDATE_ALIUCORD_KEY, "AutoUpdate DHCord", null)
+        addSwitch(ctx, AUTO_UPDATE_PLUGINS_KEY, "AutoUpdate Plugins", null)
 
         if (StoreStream.getUserSettings().isDeveloperMode) {
             addDivider(ctx)
-            addHeader(ctx, "Developer Settings")
+            addHeader(ctx, "DevMenu.efi")
             addSwitch(
                 ctx,
                 ALIUCORD_FROM_STORAGE_KEY,
-                "Use Aliucord from storage",
+                "Use DHCord from storage",
                 "Meant for developers. Do not enable unless you know what you're doing. If someone else is telling you to do this, you are likely being scammed."
             )
         }
@@ -58,13 +58,13 @@ class AliucordPage : SettingsPage() {
         addDivider(ctx)
         addHeader(ctx, "Links")
         addLink(ctx, "Source Code", R.e.ic_account_github_white_24dp) {
-            Utils.launchUrl(Constants.ALIUCORD_GITHUB_REPO)
+            Utils.launchUrl(Constants.DHCORD_GITHUB_REPO)
         }
         addLink(ctx, "Support Server", R.e.ic_help_24dp) {
             Utils.joinSupportServer(it.context)
         }
-        addLink(ctx, "Support us on GitHub Sponsors", R.e.ic_heart_24dp) {
-            Utils.launchUrl("https://github.com/sponsors/Juby210")
+        addLink(ctx, "Follow me on GitHub", R.e.ic_heart_24dp) {
+            Utils.launchUrl("https://github.com/Daniel224455")
         }
     }
 
