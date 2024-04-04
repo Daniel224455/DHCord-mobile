@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.views;
+package com.dhcord.views;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -19,8 +19,8 @@ import androidx.annotation.*;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
-import com.aliucord.Utils;
-import com.aliucord.utils.DimenUtils;
+import com.dhcord.Utils;
+import com.dhcord.utils.DimenUtils;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class TextInput extends CardView {
