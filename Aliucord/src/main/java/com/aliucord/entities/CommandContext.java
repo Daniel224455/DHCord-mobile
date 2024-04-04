@@ -3,15 +3,15 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.entities;
+package com.dhcord.entities;
 
 import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.aliucord.wrappers.ChannelWrapper;
-import com.aliucord.wrappers.GuildRoleWrapper;
+import com.dhcord.wrappers.ChannelWrapper;
+import com.dhcord.wrappers.GuildRoleWrapper;
 import com.discord.api.message.LocalAttachment;
 import com.discord.api.message.MessageReference;
 import com.discord.api.role.GuildRole;
