@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api;
+package com.dhcord.api;
 
 import android.os.Build;
 import android.text.TextUtils;
@@ -11,12 +11,12 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.aliucord.*;
-import com.aliucord.api.ButtonsAPI;
-import com.aliucord.entities.CommandContext;
-import com.aliucord.entities.Plugin;
-import com.aliucord.utils.ReflectUtils;
-import com.aliucord.wrappers.ChannelWrapper;
+import com.dhcord.*;
+import com.dhcord.api.ButtonsAPI;
+import com.dhcord.entities.CommandContext;
+import com.dhcord.entities.Plugin;
+import com.dhcord.utils.ReflectUtils;
+import com.dhcord.wrappers.ChannelWrapper;
 import com.discord.api.commands.ApplicationCommandData;
 import com.discord.api.commands.ApplicationCommandType;
 import com.discord.api.message.MessageFlags;
@@ -51,7 +51,7 @@ import kotlin.jvm.functions.Function1;
 
 @SuppressWarnings("unused")
 public class CommandsAPI {
-    /** ID of the Aliucord Application */
+    /** ID of the dhcord Application */
     public static final long ALIUCORD_APP_ID = generateId();
     public static final String DONT_SEND_RESULT = "{ALIUCORD_COMMAND}";
     private static final Logger logger = new Logger("CommandsAPI");
@@ -214,9 +214,9 @@ public class CommandsAPI {
                         detailedError = String.format(
                             Locale.ENGLISH,
                             "Oops! Something went wrong while running this command:\n```java\n%s```\n" +
-                                "Please search for this error on the Aliucord server to see if it's a known issue. " +
+                                "Please search for this error on the DHCord server to see if it's a known issue. " +
                                 "If it isn't, report it to the plugin %s%s.\n\n" +
-                                "Debug:```\nCommand: %s\nPlugin: %s v%s\nDiscord v%s\nAndroid %s (SDK %d)\nAliucord %s```\nArguments:```\n%s```\n",
+                                "Debug:```\nCommand: %s\nPlugin: %s v%s\nDiscord v%s\nAndroid %s (SDK %d)\nDHCord %s```\nArguments:```\n%s```\n",
                             t,
                             manifest.authors.length == 1 ? "author" : "authors",
                             manifest.authors.length != 0 ? " (" + TextUtils.join(", ", manifest.authors) + ")" : "",
