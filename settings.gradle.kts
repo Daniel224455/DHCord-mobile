@@ -7,6 +7,6 @@ pluginManagement {
     }
 }
 
-include(":Aliucord")
+include(":DHCord")
 include(":Injector")
-rootProject.name = "Aliucord"
+rootProject.name = "DHCord"
