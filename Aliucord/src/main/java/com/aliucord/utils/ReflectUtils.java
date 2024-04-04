@@ -4,13 +4,13 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.utils;
+package com.dhcord.utils;
 
 import android.annotation.SuppressLint;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.aliucord.Main;
+import com.dhcord.Main;
 
 import java.lang.reflect.*;
 
