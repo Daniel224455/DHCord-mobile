@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins.plugindownloader
+package com.dhcord.coreplugins.plugindownloader
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,15 +12,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import com.aliucord.Constants.*
-import com.aliucord.Logger
-import com.aliucord.Utils
-import com.aliucord.entities.Plugin
-import com.aliucord.patcher.Hook
-import com.aliucord.patcher.component1
-import com.aliucord.patcher.component2
-import com.aliucord.wrappers.messages.AttachmentWrapper.Companion.filename
-import com.aliucord.wrappers.messages.AttachmentWrapper.Companion.url
+import com.dhcord.Constants.*
+import com.dhcord.Logger
+import com.dhcord.Utils
+import com.dhcord.entities.Plugin
+import com.dhcord.patcher.Hook
+import com.dhcord.patcher.component1
+import com.dhcord.patcher.component2
+import com.dhcord.wrappers.messages.AttachmentWrapper.Companion.filename
+import com.dhcord.wrappers.messages.AttachmentWrapper.Companion.url
 import com.discord.utilities.color.ColorCompat
 import com.discord.widgets.chat.list.actions.WidgetChatListActions
 import com.lytefast.flexinput.R
@@ -37,9 +37,9 @@ internal class PluginDownloader : Plugin(Manifest("PluginDownloader")) {
     init {
         PluginFile("PluginDownloader").takeIf { it.exists() }?.let {
             if (it.delete())
-                Utils.showToast("PluginDownloader has been merged into Aliucord, so I deleted the plugin for you.", true)
+                Utils.showToast("PluginDownloader has been merged into DHCord, so I deleted the plugin for you.", true)
             else
-                Utils.showToast("PluginDownloader has been merged into Aliucord. Please delete the plugin.", true)
+                Utils.showToast("PluginDownloader has been merged into DHCord. Please delete the plugin.", true)
         }
     }
 
