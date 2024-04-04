@@ -3,11 +3,11 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api;
+package com.dhcord.api;
 
 import android.view.View;
 
-import com.aliucord.entities.NotificationData;
+import com.dhcord.entities.NotificationData;
 import com.discord.utilities.channel.ChannelSelector;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.widgets.notice.NoticePopup;
