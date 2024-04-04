@@ -1,5 +1,5 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of DHcord, an Android Discord client mod.
  * Copyright (c) 2023 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
@@ -57,18 +57,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     if (!_permissionsGranted) {
       return Scaffold(
-      appBar: AppBar(title: const Text('Aliucord Installer')),
+      appBar: AppBar(title: const Text('DHcord Installer')),
       body: Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'You need to grant storage permission to use this app.',
+            'grant storage to this app wen.',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleLarge
           ),
           Padding(padding: const EdgeInsets.only(top: 10), child: ElevatedButton(
             onPressed: _checkPermissions,
-            child: const Text('Grant permission'),
+            child: const Text('gib permission very'),
           )),
       ])),
     );
@@ -78,9 +78,9 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Aliucord Installer'),
+        title: const Text('DHcord Installer'),
         actions: [
-          Tooltip(message: 'Support server', child: IconButton(
+          Tooltip(message: 'support serger', child: IconButton(
             icon: const Icon(CustomIcons.discord),
             onPressed: () => openUrl('https://discord.gg/$supportServer'),
           )),
@@ -94,12 +94,12 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(padding: const EdgeInsets.all(4), child: Column(children: [
         _freeSpace != null && _freeSpace! < 500 ? const Card(child: ListTile(
-          title: Text('You\'re running on low space'),
-          subtitle: Text('Installation may fail due to not enough free space'),
+          title: Text('your emmc has low space very'),
+          subtitle: Text('installation can mb fail due to not enough space very'),
           leading: Icon(Icons.data_usage, color: Colors.red, size: 40),
         )) : const SizedBox.shrink(),
         Card(child: ListTile(
-          title: const Text('Aliucord'),
+          title: const Text('DHcord'),
           subtitle: RichText(text: TextSpan(
             style: Theme.of(context).textTheme.bodyMedium,
             text: 'Supported version: ',
@@ -139,15 +139,15 @@ class _HomePageState extends State<HomePage> {
     checkKeystoreDeleted().then((res) {
       if (res) {
         showDialog(context: navigatorKey.currentContext!, barrierDismissible: false, builder: (context) => AlertDialog(
-          title: const Text('Keystore Missing'),
-          content: const Text('Aliucord is installed, but the keystore is missing. This likely means you deleted "ks.keystore" in the Aliucord folder. As a consequence, you can not update Aliucord directly and must instead first uninstall the old Aliucord.'),
+          title: const Text('Keystore nigged'),
+          content: const Text('DHcord is installed, but the keystore is nigged. This likely means you nigged "ks.keystore" in the DHcord folder. As a punishment very, you can not update DHcord directly and must instead first uninstall the old DHcord.'),
           actions: [
             TextButton(
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [ Icon(Icons.delete_outlined), Text(' Uninstall') ],
               ),
-              onPressed: () async => await uninstallAliucord(),
+              onPressed: () async => await uninstallDHcord(),
             ),
           ],
         ));
