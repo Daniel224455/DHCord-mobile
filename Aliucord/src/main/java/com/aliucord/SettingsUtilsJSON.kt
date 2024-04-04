@@ -1,10 +1,10 @@
-package com.aliucord
+package com.dhcord
 
-import com.aliucord.PluginManager.logger
-import com.aliucord.settings.*
-import com.aliucord.utils.GsonUtils.fromJson
-import com.aliucord.utils.GsonUtils.gson
-import com.aliucord.utils.GsonUtils.toJson
+import com.dhcord.PluginManager.logger
+import com.dhcord.settings.*
+import com.dhcord.utils.GsonUtils.fromJson
+import com.dhcord.utils.GsonUtils.gson
+import com.dhcord.utils.GsonUtils.toJson
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
