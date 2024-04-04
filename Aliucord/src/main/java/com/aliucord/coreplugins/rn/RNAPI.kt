@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins.rn
+package com.dhcord.coreplugins.rn
 
 import android.content.Context
 import com.aliucord.entities.Plugin
