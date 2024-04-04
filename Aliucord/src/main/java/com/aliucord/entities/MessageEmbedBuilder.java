@@ -4,10 +4,10 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.entities;
+package com.dhcord.entities;
 
-import com.aliucord.Main;
-import com.aliucord.utils.ReflectUtils;
+import com.dhcord.Main;
+import com.dhcord.utils.ReflectUtils;
 import com.discord.api.message.embed.*;
 import com.discord.api.utcdatetime.UtcDateTime;
 
