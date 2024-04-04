@@ -12,10 +12,10 @@ import android.graphics.BitmapFactory
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import com.aliucord.*
-import com.aliucord.entities.Plugin
-import com.aliucord.patcher.*
-import com.aliucord.utils.DimenUtils.dp
+import com.dhcord.*
+import com.dhcord.entities.Plugin
+import com.dhcord.patcher.*
+import com.dhcord.utils.DimenUtils.dp
 import com.discord.databinding.UserProfileHeaderBadgeBinding
 import com.discord.models.guild.Guild
 import com.discord.utilities.views.SimpleRecyclerAdapter
@@ -111,9 +111,9 @@ internal class Badges : Plugin(Manifest("Badges")) {
     private fun getUserBadges(badges: UserBadges): List<Badge> {
         val list = ArrayList<Badge>(1)
         badges.roles?.forEach { when(it) {
-            "dev" -> list.add(Badge(R.e.ic_staff_badge_blurple_24dp, null, "Aliucord Developer", false, null))
-            "donor" -> list.add(Badge(0, null, "Aliucord Donor", false, "https://cdn.discordapp.com/emojis/859801776232202280.webp"))
-            "contributor" -> list.add(Badge(0, null, "Aliucord Contributor", false, "https://cdn.discordapp.com/emojis/886587553187246120.webp"))
+            "dev" -> list.add(Badge(R.e.ic_staff_badge_blurple_24dp, null, "DHCord Developer", false, null))
+            "donor" -> list.add(Badge(0, null, "DHCord Donor", false, "https://cdn.discordapp.com/emojis/859801776232202280.webp"))
+            "contributor" -> list.add(Badge(0, null, "DHCord Contributor", false, "https://cdn.discordapp.com/emojis/886587553187246120.webp"))
         } }
         if (badges.custom?.isNotEmpty() == true) list.addAll(badges.custom.map { it.toDiscordBadge() })
         return list
