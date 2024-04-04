@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.installer;
+package com.dhcord.installer;
 
 import android.Manifest;
 import android.content.Intent;
@@ -18,7 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 
-import com.aliucord.libzip.Zip;
+import com.dhcord.libzip.Zip;
 
 import java.io.File;
 import java.util.*;
@@ -42,7 +42,7 @@ public final class MainActivity extends FlutterActivity {
         MethodChannel updaterChannel = new MethodChannel(binaryMessenger, "updater");
         Handler handler = new Handler(Looper.getMainLooper());
         Action1<String> updater = state -> {
-            Log.d("Aliucord Installer", state);
+            Log.d("DHCord Installer", state);
             handler.post(() -> updaterChannel.invokeMethod("updateState", state));
         };
 
@@ -83,7 +83,7 @@ public final class MainActivity extends FlutterActivity {
                         List<Map<String, Object>> discordApps = new ArrayList<>();
                         for (ApplicationInfo info : apps) {
                             if (!info.packageName.equals("com.discord") &&
-                                    !info.packageName.equals("com.aliucord") &&
+                                    !info.packageName.equals("com.dhcord") &&
                                     !info.packageName.startsWith("com.cutthecord")) continue;
 
                             discordApps.add(Utils.appInfoToMap(pm, info, true));
@@ -110,9 +110,9 @@ public final class MainActivity extends FlutterActivity {
                     new Thread(() -> {
                         String path = methodCall.argument("path");
                         if (path == null) return;
-                        File outApkDir = new File(Environment.getExternalStorageDirectory(), "Aliucord");
+                        File outApkDir = new File(Environment.getExternalStorageDirectory(), "DHcord");
                         if (!outApkDir.exists()) outApkDir.mkdirs();
-                        String outApk = outApkDir.getAbsolutePath() + "/Aliucord.apk";
+                        String outApk = outApkDir.getAbsolutePath() + "/DHcord.apk";
 
                         try {
                             File aliucordDex = new File(getFilesDir(), "classes.dex");
@@ -120,11 +120,11 @@ public final class MainActivity extends FlutterActivity {
                             // NOTE: some files that may be not replaced if using aliucord as base (and currently are):
                             // icon files, AndroidManifest.xml, classes5.dex (pine classes)
 
-                            updater.call("Copying original apk (" + path + ")");
+                            updater.call("Copying 1488 original apk (" + path + ")");
                             File outApkFile = new File(outApk);
                             Utils.copyFile(new File(path), outApkFile);
 
-                            updater.call("Repacking apk");
+                            updater.call("rebuilding goofy apk");
                             Zip zip = new Zip(outApk, 6, 'r');
 
                             boolean patched = false;
@@ -190,24 +190,24 @@ public final class MainActivity extends FlutterActivity {
                             zip.close();
 
                             if (methodCall.argument("replaceBg") != Boolean.FALSE) {
-                                updater.call("Replacing icons");
+                                updater.call("Replacing icons to denis ananyev1488 very");
                                 Utils.replaceIcon(assets, outApk);
                             }
                             handler.post(() -> result.success(null));
                         } catch (Throwable e) {
-                            Log.e("Aliucord Installer", null, e);
+                            Log.e("DHcord Installer", null, e);
                             handler.post(() -> result.error("patchApk", e.toString(), Utils.stackTraceToString(e.getStackTrace())));
                         }
                     }).start();
                     break;
                 case "signApk":
-                    updater.call("Signing apk file");
+                    updater.call("Signigging apk file");
                     new Thread(() -> {
                         try {
-                            Signer.signApk(new File(Environment.getExternalStorageDirectory(), "Aliucord/Aliucord.apk"));
+                            Signer.signApk(new File(Environment.getExternalStorageDirectory(), "DHcord/DHcord.apk"));
                             handler.post(() -> result.success(null));
                         } catch (Throwable e) {
-                            Log.e("Aliucord Installer", null, e);
+                            Log.e("DHcord Installer", null, e);
                             handler.post(() -> result.error("signApk", e.toString(), Utils.stackTraceToString(e.getStackTrace())));
                         }
                     }).start();
@@ -229,18 +229,18 @@ public final class MainActivity extends FlutterActivity {
                     }
                     break;
                 case "checkKeystoreDeleted":
-                    if (new File(Environment.getExternalStorageDirectory(), "Aliucord/ks.keystore").exists()) {
+                    if (new File(Environment.getExternalStorageDirectory(), "DHcord/ks.keystore").exists()) {
                         result.success(false);
                     } else try {
-                        getPackageManager().getPackageInfo("com.aliucord", 0);
+                        getPackageManager().getPackageInfo("com.DHcord", 0);
                         result.success(true);
                     } catch (PackageManager.NameNotFoundException ignored) {
                         result.success(false);
                     }
                     break;
-                case "uninstallAliucord":
+                case "uninstallDHcord":
                     Intent intent = new Intent(Intent.ACTION_DELETE);
-                    intent.setData(Uri.parse("package:com.aliucord"));
+                    intent.setData(Uri.parse("package:com.DHcord"));
                     startActivity(intent);
                     result.success(null);
                     break;
