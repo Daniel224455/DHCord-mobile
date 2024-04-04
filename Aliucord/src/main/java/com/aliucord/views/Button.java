@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.views;
+package com.dhcord.views;
 
 import android.content.Context;
 import android.view.ContextThemeWrapper;
