@@ -4,9 +4,9 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins.plugindownloader
+package com.dhcord.coreplugins.plugindownloader
 
-import com.aliucord.*
+import com.dhcord.*
 import java.io.File
 import java.io.IOException
 
