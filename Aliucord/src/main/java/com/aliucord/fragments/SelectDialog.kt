@@ -1,10 +1,10 @@
-package com.aliucord.fragments
+package com.dhcord.fragments
 
 import android.view.*
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.aliucord.Utils
-import com.aliucord.utils.DimenUtils
+import com.dhcord.Utils
+import com.dhcord.utils.DimenUtils
 import com.discord.app.AppDialog
 import com.lytefast.flexinput.R
 
