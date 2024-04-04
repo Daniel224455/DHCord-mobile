@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2024 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord;
+package com.dhcord;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -25,16 +25,16 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
-import com.aliucord.coreplugins.CorePlugins;
-import com.aliucord.entities.Plugin;
-import com.aliucord.patcher.*;
-import com.aliucord.settings.*;
-import com.aliucord.updater.PluginUpdater;
-import com.aliucord.utils.ChangelogUtils;
-import com.aliucord.utils.ReflectUtils;
-import com.aliucord.views.Divider;
-import com.aliucord.views.ToolbarButton;
-import com.aliucord.wrappers.embeds.MessageEmbedWrapper;
+import com.dhcord.coreplugins.CorePlugins;
+import com.dhcord.entities.Plugin;
+import com.dhcord.patcher.*;
+import com.dhcord.settings.*;
+import com.dhcord.updater.PluginUpdater;
+import com.dhcord.utils.ChangelogUtils;
+import com.dhcord.utils.ReflectUtils;
+import com.dhcord.views.Divider;
+import com.dhcord.views.ToolbarButton;
+import com.dhcord.wrappers.embeds.MessageEmbedWrapper;
 import com.discord.api.message.embed.EmbedField;
 import com.discord.app.*;
 import com.discord.databinding.WidgetChangeLogBinding;
@@ -76,7 +76,7 @@ public final class Main {
     public static SettingsUtilsJSON settings;
 
     /**
-     * Aliucord's preInit hook. Plugins are loaded here
+     * DHCord's preInit hook. Plugins are loaded here
      * @noinspection unused
      */
     public static void preInit(AppActivity activity) throws NoSuchMethodException {
@@ -95,7 +95,7 @@ public final class Main {
     }
 
     private static void preInitWithPermissions(AppCompatActivity activity) {
-        settings = new SettingsUtilsJSON("Aliucord");
+        settings = new SettingsUtilsJSON("DHCord");
         CorePlugins.loadAll(activity);
         loadAllPlugins(activity);
     }
@@ -118,7 +118,7 @@ public final class Main {
             layout.addView(new Divider(context), baseIndex++);
 
             var header = new TextView(context, null, 0, R.i.UiKit_Settings_Item_Header);
-            header.setText("Aliucord");
+            header.setText("DHCord");
             header.setTypeface(ResourcesCompat.getFont(context, Constants.Fonts.whitney_semibold));
             layout.addView(header, baseIndex++);
 
@@ -141,17 +141,17 @@ public final class Main {
                 baseIndex++
             );
             layout.addView(
-                makeSettingsEntry(font, context, "Open Debug Log", R.e.ic_audit_logs_24dp, WidgetDebugging.class),
+                makeSettingsEntry(font, context, "xzDebugLogFolder", R.e.ic_audit_logs_24dp, WidgetDebugging.class),
                 baseIndex
             );
 
             TextView versionView = layout.findViewById(Utils.getResId("app_info_header", "id"));
-            var text = versionView.getText() + " | Aliucord " + BuildConfig.GIT_REVISION;
+            var text = versionView.getText() + " | DHCord " + BuildConfig.GIT_REVISION;
             if (Utils.isDebuggable()) text += " [DEBUGGABLE]";
             versionView.setText(text);
 
             TextView uploadLogs = layout.findViewById(Utils.getResId("upload_debug_logs", "id"));
-            uploadLogs.setText("Aliucord Support Server");
+            uploadLogs.setText("DHCord Support Server");
             uploadLogs.setOnClickListener(e -> Utils.joinSupportServer(e.getContext()));
         }));
 
@@ -433,7 +433,7 @@ public final class Main {
                 preInitWithPermissions(activity);
                 CorePlugins.startAll(activity);
                 startAllPlugins();
-            } else Toast.makeText(activity, "You have to grant storage permission to use Aliucord", Toast.LENGTH_LONG).show();
+            } else Toast.makeText(activity, "You have to grant storage permission to use DHCord", Toast.LENGTH_LONG).show();
         }).launch(perm);
         return false;
     }
