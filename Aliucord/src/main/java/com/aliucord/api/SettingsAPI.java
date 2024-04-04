@@ -3,10 +3,10 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api;
+package com.dhcord.api;
 
 
-import com.aliucord.SettingsUtilsJSON;
+import com.dhcord.SettingsUtilsJSON;
 
 import java.lang.reflect.Type;
 import java.util.List;
