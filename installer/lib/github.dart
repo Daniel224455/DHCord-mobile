@@ -55,8 +55,8 @@ class Asset {
 }
 
 class GithubAPI with ChangeNotifier {
-  static const _org = 'Aliucord';
-  static const _repo = 'Aliucord';
+  static const _org = 'DHCord-mobile';
+  static const _repo = 'DHCord-mobile';
 
   static const _apiHost = 'api.github.com';
   static const _commitsEndpoint = '/repos/$_org/$_repo/commits';
