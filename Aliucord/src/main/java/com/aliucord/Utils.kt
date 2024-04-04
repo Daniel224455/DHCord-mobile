@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord
+package com.dhcord
 
 import android.annotation.SuppressLint
 import android.content.*
@@ -28,10 +28,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import b.a.d.j
-import com.aliucord.fragments.AppFragmentProxy
-import com.aliucord.fragments.ConfirmDialog
-import com.aliucord.utils.DimenUtils.dp
-import com.aliucord.utils.ReflectUtils
+import com.dhcord.fragments.AppFragmentProxy
+import com.dhcord.fragments.ConfirmDialog
+import com.dhcord.utils.DimenUtils.dp
+import com.dhcord.utils.ReflectUtils
 import com.discord.api.commands.ApplicationCommandType
 import com.discord.api.commands.CommandChoice
 import com.discord.api.message.attachment.MessageAttachment
