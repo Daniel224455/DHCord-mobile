@@ -3,9 +3,9 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.installer;
+package com.dhcord.installer;
 
-import com.aliucord.libzip.Zip;
+import com.dhcord.libzip.Zip;
 
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
@@ -52,7 +52,7 @@ public final class Signer {
         do serialNumber = BigInteger.valueOf(new SecureRandom().nextInt());
         while (serialNumber.compareTo(BigInteger.ZERO) < 0);
 
-        X500Name x500Name = new X500Name("CN=Aliucord Installer");
+        X500Name x500Name = new X500Name("CN=DHcord Installer");
         X509v3CertificateBuilder builder = new X509v3CertificateBuilder(
             x500Name,
             serialNumber,
@@ -106,7 +106,7 @@ public final class Signer {
         Manifest manifest = new Manifest();
         Attributes attrs = manifest.getMainAttributes();
         attrs.put(Attributes.Name.MANIFEST_VERSION, "1.0");
-        attrs.put(new Attributes.Name("Created-By"), "Aliucord Installer");
+        attrs.put(new Attributes.Name("Created-By"), "DHcord Installer");
 
         Attributes.Name digestAttr = new Attributes.Name("SHA1-Digest");
         for (Map.Entry<String, String> entry : digests.entrySet()) {
@@ -131,7 +131,7 @@ public final class Signer {
         manifest = new Manifest();
         attrs = manifest.getMainAttributes();
         attrs.put(Attributes.Name.SIGNATURE_VERSION, "1.0");
-        attrs.put(new Attributes.Name("Created-By"), "Aliucord Installer");
+        attrs.put(new Attributes.Name("Created-By"), "DHcord Installer");
         attrs.put(new Attributes.Name("SHA1-Digest-Manifest"), manifestHash);
         attrs.put(new Attributes.Name("SHA1-Digest-Manifest-Main-Attributes"), manifestMainHash);
 
