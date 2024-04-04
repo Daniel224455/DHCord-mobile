@@ -1,4 +1,4 @@
-package com.aliucord.annotations
+package com.dhcord.annotations
 
 /**
  * Annotates the entrypoint of a plugin, used by manifest.json generation
