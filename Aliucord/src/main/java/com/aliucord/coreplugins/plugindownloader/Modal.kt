@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins.plugindownloader
+package com.dhcord.coreplugins.plugindownloader
 
 import android.annotation.SuppressLint
 import android.view.View
@@ -16,9 +16,9 @@ import com.lytefast.flexinput.R
 import java.io.PrintWriter
 import java.io.StringWriter
 
-import com.aliucord.Http
-import com.aliucord.views.Button
-import com.aliucord.views.DangerButton
+import com.dhcord.Http
+import com.dhcord.views.Button
+import com.dhcord.views.DangerButton
 import com.google.gson.reflect.TypeToken
 
 internal class Modal(private val author: String, private val repo: String) : SettingsPage() {
@@ -62,7 +62,7 @@ internal class Modal(private val author: String, private val repo: String) : Set
             else -> {
                 val outdatedDiscordWarning =
                     TextView(ctx, null, 0, R.i.UiKit_Settings_Item_SubText).apply {
-                        text = "Note: Some buttons are disabled because they require a newer Discord version. Please update Aliucord using the installer first."
+                        text = "Note: Some buttons are disabled because they require a newer Discord version. Please update DHCord using the installer first."
                         visibility = View.GONE
                         addView(this)
                     }
