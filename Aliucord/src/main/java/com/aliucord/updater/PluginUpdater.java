@@ -3,16 +3,16 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.updater;
+package com.dhcord.updater;
 
 import android.text.TextUtils;
 
-import com.aliucord.*;
-import com.aliucord.api.NotificationsAPI;
-import com.aliucord.entities.NotificationData;
-import com.aliucord.entities.Plugin;
-import com.aliucord.settings.AliucordPageKt;
-import com.aliucord.utils.MDUtils;
+import com.dhcord.*;
+import com.dhcord.api.NotificationsAPI;
+import com.dhcord.entities.NotificationData;
+import com.dhcord.entities.Plugin;
+import com.dhcord.settings.AliucordPageKt;
+import com.dhcord.utils.MDUtils;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.File;
@@ -70,7 +70,7 @@ public class PluginUpdater {
             int res = PluginUpdater.updateAll();
             if (res == 0) return;
             if (res == -1) {
-                body = "Something went wrong while auto updating plugins. Check the debug log for more info.";
+                body = "Something went wrong while auto updating plugins. Check the DebugLog for more info.";
             } else {
                 body = String.format("Automatically updated %s: %s", Utils.pluralise(res, "plugin"), updatablePlugins);
             }
@@ -80,17 +80,17 @@ public class PluginUpdater {
 
         if (!Updater.usingDexFromStorage()) {
             if (Updater.isDiscordOutdated()) {
-                body = "Your Base Discord is outdated. Please update using the installer - " + body;
+                body = "Your Discord base is outdated. Please update using the DHCord installer - " + body;
             } else if (Updater.isAliucordOutdated()) {
                 if (Main.settings.getBool(AliucordPageKt.AUTO_UPDATE_ALIUCORD_KEY, false)) {
                     try {
                         Updater.updateAliucord(Utils.appActivity);
-                        body = "Auto updated Aliucord. Please restart Aliucord to load the update - " + body;
+                        body = "Auto updated DHCord. Please restart DHCord to load the update - " + body;
                     } catch (Throwable th) {
-                        body = "Failed to auto update Aliucord. Please update it manually - " + body;
+                        body = "Failed to auto update DHCord. Please update it manually - " + body;
                     }
                 } else {
-                    body = "Your Aliucord is outdated. Please update it to the latest version - " + body;
+                    body = "Your DHCord is outdated. Please update it to the latest version - " + body;
                 }
             }
         }
