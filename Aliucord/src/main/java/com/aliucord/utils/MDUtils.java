@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.utils;
+package com.dhcord.utils;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -12,7 +12,7 @@ import android.text.SpannableStringBuilder;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.aliucord.Main;
+import com.dhcord.Main;
 import com.discord.simpleast.code.CodeNode;
 import com.discord.simpleast.core.node.Node;
 import com.discord.simpleast.core.parser.Parser;
