@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.installer;
+package com.dhcord.installer;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -15,7 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.Base64;
 
-import com.aliucord.libzip.Zip;
+import com.dhcord.libzip.Zip;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
