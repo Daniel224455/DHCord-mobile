@@ -4,14 +4,14 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins.rn
+package com.dhcord.coreplugins.rn
 
 import android.content.Context
 import android.view.View
-import com.aliucord.api.rn.user.RNUser
-import com.aliucord.api.rn.user.RNUserProfile
-import com.aliucord.patcher.*
-import com.aliucord.utils.RNSuperProperties
+import com.dhcord.api.rn.user.RNUser
+import com.dhcord.api.rn.user.RNUserProfile
+import com.dhcord.patcher.*
+import com.dhcord.utils.RNSuperProperties
 import com.discord.api.channel.Channel
 import com.discord.api.channel.`ChannelUtils$getDisplayName$1`
 import com.discord.api.sticker.Sticker
