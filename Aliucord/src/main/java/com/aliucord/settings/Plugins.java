@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.settings;
+package com.dhcord.settings;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -21,14 +21,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.*;
 
-import com.aliucord.*;
-import com.aliucord.entities.Plugin;
-import com.aliucord.fragments.ConfirmDialog;
-import com.aliucord.fragments.SettingsPage;
-import com.aliucord.utils.*;
-import com.aliucord.views.Button;
-import com.aliucord.views.*;
-import com.aliucord.widgets.PluginCard;
+import com.dhcord.*;
+import com.dhcord.entities.Plugin;
+import com.dhcord.fragments.ConfirmDialog;
+import com.dhcord.fragments.SettingsPage;
+import com.dhcord.utils.*;
+import com.dhcord.views.Button;
+import com.dhcord.views.*;
+import com.dhcord.widgets.PluginCard;
 import com.discord.app.AppBottomSheet;
 import com.discord.app.AppFragment;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
@@ -68,7 +68,7 @@ public class Plugins extends SettingsPage {
                 try {
                     adapter.onSettingsClick(getAdapterPosition());
                 } catch (Throwable th) {
-                    PluginManager.logger.errorToast("Failed to launch plugin settings", th);
+                    PluginManager.logger.errorToast("Failed to launch PluginSettings", th);
                 }
             }
 
@@ -240,7 +240,7 @@ public class Plugins extends SettingsPage {
             ConfirmDialog dialog = new ConfirmDialog()
                 .setIsDangerous(true)
                 .setTitle("Delete " + p.getName())
-                .setDescription("Are you sure you want to delete this plugin? This action cannot be undone.");
+                .setDescription("Are you sure you want to delete this plugin? This action is PERMANENT.");
             dialog.setOnOkListener(e -> {
                 File pluginFile = new File(Constants.BASE_PATH + "/plugins/" + p.__filename + ".zip");
                 if (pluginFile.exists() && !pluginFile.delete()) {
@@ -275,10 +275,10 @@ public class Plugins extends SettingsPage {
         var context = view.getContext();
         int padding = DimenUtils.getDefaultPadding();
 
-        addHeaderButton("Open Plugins Folder", R.e.ic_open_in_new_white_24dp, item -> {
+        addHeaderButton("Open PluginFolder", R.e.ic_open_in_new_white_24dp, item -> {
             File dir = new File(Constants.PLUGINS_PATH);
             if (!dir.exists() && !dir.mkdir()) {
-                Utils.showToast("Failed to create plugins directory!", true);
+                Utils.showToast("Failed to create PluginFolder!", true);
                 return true;
             }
             Utils.launchFileExplorer(dir);
@@ -287,7 +287,7 @@ public class Plugins extends SettingsPage {
 
         if (!PluginManager.failedToLoad.isEmpty()) {
             var failedPluginsView = new Button(context);
-            failedPluginsView.setText("Plugin Errors");
+            failedPluginsView.setText("PluginErrors");
             failedPluginsView.setOnClickListener(v -> Utils.openPage(context, FailedPluginsPage.class));
             addView(failedPluginsView);
             addView(new Divider(context));
