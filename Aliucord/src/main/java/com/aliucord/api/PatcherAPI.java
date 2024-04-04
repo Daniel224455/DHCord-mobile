@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api;
+package com.dhcord.api;
 
 import androidx.annotation.NonNull;
 
