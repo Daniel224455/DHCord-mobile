@@ -3,15 +3,15 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins
+package com.dhcord.coreplugins
 
 import android.content.Context
 import androidx.fragment.app.FragmentActivity
 
-import com.aliucord.api.ButtonsAPI
-import com.aliucord.api.CommandsAPI
-import com.aliucord.entities.Plugin
-import com.aliucord.patcher.*
+import com.dhcord.api.ButtonsAPI
+import com.dhcord.api.CommandsAPI
+import com.dhcord.entities.Plugin
+import com.dhcord.patcher.*
 
 import com.discord.models.message.Message
 import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemBotComponentRow
