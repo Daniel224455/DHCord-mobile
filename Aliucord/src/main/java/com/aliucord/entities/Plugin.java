@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.entities;
+package com.dhcord.entities;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -12,9 +12,9 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.aliucord.Logger;
-import com.aliucord.annotations.AliucordPlugin;
-import com.aliucord.api.*;
+import com.dhcord.Logger;
+import com.dhcord.annotations.AliucordPlugin;
+import com.dhcord.api.*;
 import com.discord.app.AppBottomSheet;
 import com.discord.app.AppFragment;
 
