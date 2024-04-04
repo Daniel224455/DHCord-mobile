@@ -15,7 +15,7 @@ fun getGitHash(): String {
     return stdout.toString().trim()
 }
 
-group = "com.aliucord"
+group = "com.dhcord"
 
 aliucord {
     projectType.set(com.aliucord.gradle.ProjectType.CORE)
@@ -59,9 +59,9 @@ tasks {
     }
 
     create("pushDebuggable") {
-        group = "aliucord"
+        group = "dhcord"
 
-        val aliucordPath = "/storage/emulated/0/Aliucord/"
+        val aliucordPath = "/storage/emulated/0/DHCord/"
 
         doLast {
             exec {
