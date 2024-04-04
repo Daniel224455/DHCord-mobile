@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.entities;
+package com.dhcord.entities;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;
