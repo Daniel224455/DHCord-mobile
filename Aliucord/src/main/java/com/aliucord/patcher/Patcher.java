@@ -1,12 +1,12 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.patcher;
+package com.dhcord.patcher;
 
-import com.aliucord.Logger;
+import com.dhcord.Logger;
 
 import java.lang.reflect.Member;
 import java.util.Objects;
@@ -50,7 +50,7 @@ public class Patcher {
     /**
      * Add a patch
      *
-     * @param forClass   The full name of the class to patch (e.g. com.aliucord.patcher.Patcher)
+     * @param forClass   The full name of the class to patch (e.g. com.dhcord.patcher.Patcher)
      * @param methodName The name of the method
      * @param paramTypes The types of the parameters (e.g. int.class, String.class)
      * @param hook       MethodHook
