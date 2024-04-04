@@ -1,4 +1,4 @@
-package com.aliucord.utils
+package com.dhcord.utils
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.DrawableRes
-import com.aliucord.Utils
+import com.dhcord.Utils
 import com.discord.widgets.changelog.WidgetChangeLog
 
 object ChangelogUtils {
