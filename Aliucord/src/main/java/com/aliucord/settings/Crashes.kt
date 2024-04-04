@@ -1,9 +1,9 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
-package com.aliucord.settings
+package com.dhcord.settings
 
 import android.annotation.SuppressLint
 import android.text.SpannableStringBuilder
@@ -12,12 +12,12 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.aliucord.Constants
-import com.aliucord.Utils
-import com.aliucord.fragments.SettingsPage
-import com.aliucord.utils.DimenUtils
-import com.aliucord.utils.MDUtils
-import com.aliucord.views.DangerButton
+import com.dhcord.Constants
+import com.dhcord.Utils
+import com.dhcord.fragments.SettingsPage
+import com.dhcord.utils.DimenUtils
+import com.dhcord.utils.MDUtils
+import com.dhcord.views.DangerButton
 import com.lytefast.flexinput.R
 import java.io.File
 import java.util.*
@@ -29,7 +29,7 @@ class Crashes : SettingsPage() {
     @SuppressLint("SetTextI18n")
     override fun onViewBound(view: View) {
         super.onViewBound(view)
-        setActionBarTitle("Crash Logs")
+        setActionBarTitle("CrashLogs")
 
         val context = view.context
         val padding = DimenUtils.defaultPadding
@@ -39,7 +39,7 @@ class Crashes : SettingsPage() {
         val files = dir.listFiles()
         val hasCrashes = files != null && files.isNotEmpty()
 
-        addHeaderButton("Open Crashlog Folder", R.e.ic_open_in_new_white_24dp) {
+        addHeaderButton("xzCrashLogsFolder", R.e.ic_open_in_new_white_24dp) {
             if (!dir.exists() && !dir.mkdir()) {
                 Utils.showToast("Failed to create crashlogs directory!", true)
             } else {
@@ -47,7 +47,7 @@ class Crashes : SettingsPage() {
             }
             true
         }
-        headerBar.menu.add("Clear Crashes")
+        headerBar.menu.add("ClrCrashList")
             .setIcon(ContextCompat.getDrawable(context, R.e.ic_delete_24dp))
             .setEnabled(hasCrashes)
             .setOnMenuItemClickListener {
@@ -61,7 +61,7 @@ class Crashes : SettingsPage() {
         if (crashes == null || crashes.isEmpty()) {
             TextView(context, null, 0, R.i.UiKit_Settings_Item_Header).run {
                 isAllCaps = false
-                text = "Woah, no crashes :O"
+                text = "lmao, no crashes :)"
                 typeface = ResourcesCompat.getFont(context, Constants.Fonts.whitney_semibold)
                 gravity = Gravity.CENTER
 
@@ -71,13 +71,13 @@ class Crashes : SettingsPage() {
                 text = "LET'S CHANGE THAT"
                 setPadding(p, p, p, p)
                 setOnClickListener {
-                    throw RuntimeException("You fool...")
+                    throw RuntimeException("You idiot...")
                 }
                 linearLayout.addView(this)
             }
         } else {
             TextView(context, null, 0, R.i.UiKit_Settings_Item_SubText).run {
-                text = "Hint: Crashlogs are accesible via your file explorer at Aliucord/crashlogs"
+                text = "Hint: Crashlogs are accesible via your file explorer at DHCord/crashlogs"
                 typeface = ResourcesCompat.getFont(context, Constants.Fonts.whitney_medium)
                 gravity = Gravity.CENTER
                 linearLayout.addView(this)
