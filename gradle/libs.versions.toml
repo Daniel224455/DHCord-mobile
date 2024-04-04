@@ -13,7 +13,7 @@ constraintlayout = "2.1.4"
 
 [libraries]
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-aliuhook = { module = "com.aliucord:Aliuhook", version.ref = "aliuhook" }
+aliuhook = { module = "com.DHCord:Aliuhook", version.ref = "aliuhook" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 discord = { module = "com.discord:discord", version.ref = "discord" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
