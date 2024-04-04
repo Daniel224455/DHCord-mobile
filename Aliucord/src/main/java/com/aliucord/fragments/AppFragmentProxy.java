@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.fragments;
+package com.dhcord.fragments;
 
 import androidx.fragment.app.Fragment;
 
