@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.utils
+package com.dhcord.utils
 
 import com.discord.models.domain.Model
 import com.google.gson.Gson
