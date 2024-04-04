@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of DHCord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.fragments;
+package com.dhcord.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,10 +20,10 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 
-import com.aliucord.Utils;
-import com.aliucord.utils.DimenUtils;
-import com.aliucord.views.Divider;
-import com.aliucord.views.ToolbarButton;
+import com.dhcord.Utils;
+import com.dhcord.utils.DimenUtils;
+import com.dhcord.views.Divider;
+import com.dhcord.views.ToolbarButton;
 import com.discord.app.AppFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.lytefast.flexinput.R;
@@ -47,7 +47,7 @@ public class SettingsPage extends AppFragment {
         super.onViewBound(view);
         this.view = (CoordinatorLayout) view;
 
-        setActionBarSubtitle("Aliucord");
+        setActionBarSubtitle("DHCord");
         setActionBarDisplayHomeAsUpEnabled();
 
         clear();
