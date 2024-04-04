@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.injector
+package com.DHCord.injector
 
 import com.discord.app.AppLog
 
