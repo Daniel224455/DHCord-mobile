@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api.rn.user
+package com.dhcord.api.rn.user
 
 import com.discord.api.guildmember.GuildMember
 import com.discord.api.premium.PremiumTier
