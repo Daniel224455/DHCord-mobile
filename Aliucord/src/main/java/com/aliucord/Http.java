@@ -1,15 +1,15 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2023 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord;
+package com.dhcord;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.aliucord.utils.*;
+import com.dhcord.utils.*;
 import com.discord.utilities.analytics.AnalyticSuperProperties;
 import com.discord.utilities.rest.RestAPI;
 import com.google.gson.Gson;
@@ -283,7 +283,7 @@ public class Http {
         public Request(String url, String method) throws IOException {
             conn = (HttpURLConnection) new URL(url).openConnection();
             conn.setRequestMethod(method.toUpperCase());
-            conn.addRequestProperty("User-Agent", "Aliucord (https://github.com/Aliucord/Aliucord)");
+            conn.addRequestProperty("User-Agent", "DHCord (https://github.com/Daniel224455/DHCord-mobile)");
         }
 
         /**
