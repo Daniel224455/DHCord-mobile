@@ -1,9 +1,18 @@
 name: Build Injector
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        description: The version of this release. Should be lower than the last and in the format 1.0.0
+        default: "1.0.0"
+      title:
+        required: true
+        description: Title of this release
+      description:
+        required: false
+        description: Description of this release
     paths:
       - .github/workflows/build-injector.yml
       - Injector/**
