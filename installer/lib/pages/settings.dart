@@ -1,5 +1,5 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of DHcord, an Android Discord client mod.
  * Copyright (c) 2023 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
@@ -28,9 +28,9 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> with SingleTickerProviderStateMixin {
   static final List<CheckBoxData> _checkBoxes = [
-    CheckBoxData('replace_bg', 'Replace icon background with Aliucord\'s', true),
+    CheckBoxData('replace_bg', 'Replace icon background with DHcord\'s', true),
     CheckBoxData('use_dex_from_storage', 'Use Injector.dex from storage', false),
-    CheckBoxData('developer_mode', 'Developer Mode', false),
+    CheckBoxData('developer_mode', 'DevMenu.efi', false),
   ];
   int _theme = 0;
   String _dexLocation = defaultDexLocation;
@@ -57,8 +57,8 @@ class _SettingsPageState extends State<SettingsPage> with SingleTickerProviderSt
               value: _theme,
               items: const [
                 DropdownMenuItem(value: 0, child: Padding(padding: EdgeInsets.only(right: 70), child: Text('System'))),
-                DropdownMenuItem(value: 1, child: Text('Light')),
-                DropdownMenuItem(value: 2, child: Text('Dark')),
+                DropdownMenuItem(value: 1, child: Text('White')),
+                DropdownMenuItem(value: 2, child: Text('Nigger')),
               ],
               onChanged: (newValue) {
                 themeManager.switchTheme(newValue as int);
