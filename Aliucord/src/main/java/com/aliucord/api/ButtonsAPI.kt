@@ -3,15 +3,15 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api
+package com.dhcord.api
 
 import android.content.Context
 import androidx.fragment.app.FragmentActivity
 
-import com.aliucord.coreplugins.ButtonsAPI
-import com.aliucord.Logger
-import com.aliucord.utils.ReflectUtils
-import com.aliucord.utils.lazyField
+import com.dhcord.coreplugins.ButtonsAPI
+import com.dhcord.Logger
+import com.dhcord.utils.ReflectUtils
+import com.dhcord.utils.lazyField
 
 import com.discord.api.botuikit.*
 import com.discord.models.message.Message
