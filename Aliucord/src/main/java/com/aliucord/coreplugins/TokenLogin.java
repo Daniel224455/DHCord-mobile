@@ -1,10 +1,10 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins;
+package com.dhcord.coreplugins;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,12 +12,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.aliucord.Utils;
-import com.aliucord.entities.Plugin;
-import com.aliucord.patcher.Patcher;
-import com.aliucord.patcher.Hook;
-import com.aliucord.utils.DimenUtils;
-import com.aliucord.views.Button;
+import com.dhcord.Utils;
+import com.dhcord.entities.Plugin;
+import com.dhcord.patcher.Patcher;
+import com.dhcord.patcher.Hook;
+import com.dhcord.utils.DimenUtils;
+import com.dhcord.views.Button;
 import com.discord.app.AppActivity;
 import com.discord.app.AppFragment;
 import com.discord.models.domain.auth.ModelLoginResult;

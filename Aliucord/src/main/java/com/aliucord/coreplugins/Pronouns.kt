@@ -1,4 +1,4 @@
-package com.aliucord.coreplugins
+package com.dhcord.coreplugins
 
 import android.content.Context
 import android.util.TypedValue
@@ -6,11 +6,11 @@ import android.view.View
 import android.widget.TextView
 import android.widget.LinearLayout
 import androidx.core.content.res.ResourcesCompat
-import com.aliucord.Constants
-import com.aliucord.Utils
-import com.aliucord.api.rn.user.RNUserProfile
-import com.aliucord.entities.Plugin
-import com.aliucord.patcher.after
+import com.dhcord.Constants
+import com.dhcord.Utils
+import com.dhcord.api.rn.user.RNUserProfile
+import com.dhcord.entities.Plugin
+import com.dhcord.patcher.after
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView
 import com.discord.widgets.user.profile.UserProfileHeaderView
 import com.discord.widgets.user.profile.UserProfileHeaderViewModel

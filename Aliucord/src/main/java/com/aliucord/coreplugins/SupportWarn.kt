@@ -1,17 +1,17 @@
-package com.aliucord.coreplugins
+package com.dhcord.coreplugins
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.aliucord.Constants.PLUGIN_REQUESTS_CHANNEL_ID
-import com.aliucord.Utils
-import com.aliucord.api.SettingsAPI
-import com.aliucord.entities.Plugin
-import com.aliucord.fragments.InputDialog
-import com.aliucord.patcher.*
-import com.aliucord.settings.delegate
+import com.dhcord.Constants.PLUGIN_REQUESTS_CHANNEL_ID
+import com.dhcord.Utils
+import com.dhcord.api.SettingsAPI
+import com.dhcord.entities.Plugin
+import com.dhcord.fragments.InputDialog
+import com.dhcord.patcher.*
+import com.dhcord.settings.delegate
 import com.discord.widgets.chat.input.ChatInputViewModel
 import com.discord.widgets.chat.input.WidgetChatInput
 import com.lytefast.flexinput.R

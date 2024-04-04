@@ -1,18 +1,18 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2023 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.coreplugins
+package com.dhcord.coreplugins
 
 import android.content.Context
 import android.view.View
 import android.widget.TextView
-import com.aliucord.Utils
-import com.aliucord.entities.Plugin
-import com.aliucord.patcher.after
-import com.aliucord.patcher.instead
+import com.dhcord.Utils
+import com.dhcord.entities.Plugin
+import com.dhcord.patcher.after
+import com.dhcord.patcher.instead
 import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm
 import com.discord.widgets.chat.list.entries.ChatListEntry
 import com.discord.widgets.chat.list.entries.ThreadDraftFormEntry

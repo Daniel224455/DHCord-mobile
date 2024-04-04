@@ -2,14 +2,14 @@
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
-package com.aliucord.coreplugins
+package com.dhcord.coreplugins
 
 import android.content.Context
 import android.os.Build
-import com.aliucord.*
-import com.aliucord.api.CommandsAPI
-import com.aliucord.api.CommandsAPI.CommandResult
-import com.aliucord.entities.Plugin
+import com.dhcord.*
+import com.dhcord.api.CommandsAPI
+import com.dhcord.api.CommandsAPI.CommandResult
+import com.dhcord.entities.Plugin
 import com.discord.api.commands.ApplicationCommandType
 import java.io.File
 
@@ -77,7 +77,7 @@ ${if (disabled.isEmpty()) "None" else "> $disabledStr"}
             val str = """
 **Debug Info:**
 > Discord: ${Constants.DISCORD_VERSION}
-> Aliucord: ${BuildConfig.GIT_REVISION} (${PluginManager.plugins.size} plugins)
+> dhcord: ${BuildConfig.GIT_REVISION} (${PluginManager.plugins.size} plugins)
 > System: Android ${Build.VERSION.RELEASE} (SDK v${Build.VERSION.SDK_INT}) - ${getArchitecture()}
 > Rooted: ${getIsRooted() ?: "Unknown"}
             """

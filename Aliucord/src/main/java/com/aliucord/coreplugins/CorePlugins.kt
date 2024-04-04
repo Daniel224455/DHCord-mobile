@@ -1,9 +1,9 @@
-package com.aliucord.coreplugins
+package com.dhcord.coreplugins
 
 import android.content.Context
-import com.aliucord.PluginManager
-import com.aliucord.coreplugins.plugindownloader.PluginDownloader
-import com.aliucord.coreplugins.rn.RNAPI
+import com.dhcord.PluginManager
+import com.dhcord.coreplugins.plugindownloader.PluginDownloader
+import com.dhcord.coreplugins.rn.RNAPI
 
 /** CorePlugins Manager */
 object CorePlugins {
