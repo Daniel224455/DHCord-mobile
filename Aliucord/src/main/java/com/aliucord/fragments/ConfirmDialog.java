@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.fragments;
+package com.dhcord.fragments;
 
 import android.text.method.LinkMovementMethod;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
-import com.aliucord.Utils;
+import com.dhcord.Utils;
 import com.discord.app.AppDialog;
 import com.discord.databinding.LeaveGuildDialogBinding;
 import com.discord.views.LoadingButton;
