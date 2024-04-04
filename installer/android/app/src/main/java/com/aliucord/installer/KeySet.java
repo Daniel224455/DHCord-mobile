@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.installer;
+package com.dhcord.installer;
 
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
