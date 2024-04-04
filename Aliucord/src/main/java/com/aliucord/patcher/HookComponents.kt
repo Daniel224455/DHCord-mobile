@@ -1,6 +1,6 @@
 @file:Suppress("NOTHING_TO_INLINE", "UNCHECKED_CAST")
 
-package com.aliucord.patcher
+package com.dhcord.patcher
 
 import de.robv.android.xposed.XC_MethodHook.MethodHookParam
 
