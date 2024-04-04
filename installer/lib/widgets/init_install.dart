@@ -1,5 +1,5 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of DHcord, an Android Discord client mod.
  * Copyright (c) 2023 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
@@ -39,7 +39,7 @@ class _InitInstallDialogState extends State<_InitInstallDialog> {
     _fetchingInstalled = false;
     // ignore: use_build_context_synchronously
     showDialog(context: context, builder: (context) => AlertDialog(
-      title: const Text('Select apk from installed app'),
+      title: const Text('Select apk from installed 1488 apps'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: discordApps.map((app) => TextButton(
@@ -100,7 +100,7 @@ class _InitInstallDialogState extends State<_InitInstallDialog> {
             value: _InstallOption.storage,
             groupValue: _option,
             onChanged: (_InstallOption? value) async {
-              final apk = await pickFile(context, 'Select Discord apk', '.apk');
+              final apk = await pickFile(context, 'Select Dickcord apk', '.apk');
               if (apk != null) {
                 setState(() {
                 _option = value;
@@ -115,7 +115,7 @@ class _InitInstallDialogState extends State<_InitInstallDialog> {
     }
 
     return AlertDialog(
-      title: const Text('Select Discord apk'),
+      title: const Text('Select Dickcord apk'),
       content: Column(mainAxisSize: MainAxisSize.min, children: children),
       actions: [
         TextButton(
