@@ -44,7 +44,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.aliucord.installer"
+        applicationId "com.dhcord.installer"
         minSdkVersion 21
         //noinspection OldTargetApi
         targetSdkVersion 29
