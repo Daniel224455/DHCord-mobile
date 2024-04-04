@@ -41,7 +41,7 @@ class _InstallPageState extends State<InstallPage> {
   String _logs = '';
 
   void _downloadDiscord(String apk) async {
-    setState(() => _logs += 'Downloading discord apk..\n');
+    setState(() => _logs += 'Downloading dickcord apk..\n');
     try {
       await dio.download(
         '$backendHost/download/discord?v=${widget.supportedVersion}',
@@ -56,7 +56,7 @@ class _InstallPageState extends State<InstallPage> {
     } on DioException catch (e) {
       _onFailed();
       setState(() =>
-        _logs += '\nAn exception occurred while downloading Discord. Please try again. If this error persists, try a different network.\n$e\n'
+        _logs += '\nAn exception occurred while downloading Dickcord. Please try again. If this error persists, try a different network.\n$e\n'
       );
     }
   }
@@ -75,10 +75,10 @@ class _InstallPageState extends State<InstallPage> {
           downloadManifest = false;
         }
         if (prefs.containsKey('dex_commit')) prefs.remove('dex_commit'); // invalidate cache
-      } else if (!await _downloadAliucord(aliucordDex)) {
+      } else if (!await _downloadDHcord(aliucordDex)) {
         return _onFailed();
       }
-    } else if (!await _downloadAliucord(aliucordDex)) {
+    } else if (!await _downloadDHcord(aliucordDex)) {
       return _onFailed();
     }
     if (downloadManifest && !await _downloadManifest(cache)) return _onFailed();
@@ -88,7 +88,7 @@ class _InstallPageState extends State<InstallPage> {
     try {
       await patchApk(apk, prefs.getBool('replace_bg') ?? true);
       await signApk();
-      installApk('${storageRoot.path}/Aliucord/Aliucord.apk');
+      installApk('${storageRoot.path}/DHcord/DHcord.apk');
       // ignore: use_build_context_synchronously
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
     } on PlatformException catch (e) {
