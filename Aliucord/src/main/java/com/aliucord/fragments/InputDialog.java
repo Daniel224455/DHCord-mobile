@@ -3,7 +3,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.fragments;
+package com.dhcord.fragments;
 
 import static android.view.View.OnClickListener;
 
@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.aliucord.Utils;
+import com.dhcord.Utils;
 import com.discord.app.AppDialog;
 import com.discord.databinding.WidgetKickUserBinding;
 import com.discord.widgets.user.WidgetKickUser$binding$2;
