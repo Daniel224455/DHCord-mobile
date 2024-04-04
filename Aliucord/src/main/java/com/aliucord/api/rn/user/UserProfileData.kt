@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.api.rn.user
+package com.dhcord.api.rn.user
 
 @Suppress("unused")
 class UserProfileData(val accentColor: Int?, val banner: String?, val bio: String?, val guildId: Long?, val pronouns: String, val themeColors: IntArray?)
