@@ -1,4 +1,4 @@
-package com.aliucord.views;
+package com.dhcord.views;
 
 import android.content.Context;
 import android.view.ContextThemeWrapper;
