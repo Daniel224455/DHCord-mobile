@@ -6,7 +6,7 @@
 
 package com.discord.app;
 
-import com.aliucord.injector.InjectorKt;
+import com.DHCord.injector.InjectorKt;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
