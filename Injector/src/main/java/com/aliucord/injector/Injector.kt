@@ -4,7 +4,7 @@
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.injector
+package com.DHCord.injector
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -30,7 +30,7 @@ private const val DATA_URL = "https://raw.githubusercontent.com/Aliucord/Aliucor
 private const val DEX_URL = "https://raw.githubusercontent.com/Aliucord/Aliucord/builds/Aliucord.zip"
 
 @Suppress("DEPRECATION")
-private val BASE_DIRECTORY = File(Environment.getExternalStorageDirectory().absolutePath, "Aliucord")
+private val BASE_DIRECTORY = File(Environment.getExternalStorageDirectory().absolutePath, "DHCord")
 private const val ALIUCORD_FROM_STORAGE_KEY = "AC_from_storage"
 
 private var unhook: XC_MethodHook.Unhook? = null
@@ -46,7 +46,7 @@ fun init() {
             }
         })
     } catch (th: Throwable) {
-        Log.e(LOG_TAG, "Failed to initialize Aliucord", th)
+        Log.e(LOG_TAG, "Failed to initialize DHCord", th)
     }
 }
 
@@ -65,10 +65,10 @@ private fun init(appActivity: AppActivity) {
     if (!pruneArtProfile(appActivity))
         Logger.w("Failed to prune art profile")
 
-    Logger.d("Initializing Aliucord...")
+    Logger.d("Initializing DHCord...")
 
     try {
-        val dexFile = File(appActivity.codeCacheDir, "Aliucord.zip")
+        val dexFile = File(appActivity.codeCacheDir, "DHCord.zip")
 
         if (!useLocalDex(appActivity, dexFile) && !dexFile.exists()) {
             val successRef = AtomicBoolean(true)
@@ -95,7 +95,7 @@ private fun init(appActivity: AppActivity) {
                         successRef.set(false)
                     } else downloadLatestAliucordDex(dexFile)
                 } catch (e: Throwable) {
-                    error(appActivity, "Failed to install aliucord :(", e)
+                    error(appActivity, "Failed to install DHCord :(", e)
                     successRef.set(false)
                 }
             }.run {
@@ -105,21 +105,21 @@ private fun init(appActivity: AppActivity) {
             if (!successRef.get()) return
         }
 
-        Logger.d("Adding Aliucord to the classpath...")
+        Logger.d("Adding DHCord to the classpath...")
         addDexToClasspath(dexFile, appActivity.classLoader)
-        val c = Class.forName("com.aliucord.Main")
+        val c = Class.forName("com.DHCord.Main")
         val preInit = c.getDeclaredMethod("preInit", AppActivity::class.java)
         val init = c.getDeclaredMethod("init", AppActivity::class.java)
 
-        Logger.d("Invoking main Aliucord entry point...")
+        Logger.d("Invoking main DHCord entry point...")
         preInit.invoke(null, appActivity)
         init.invoke(null, appActivity)
-        Logger.d("Finished initializing Aliucord")
+        Logger.d("Finished initializing DHCord")
     } catch (th: Throwable) {
-        error(appActivity, "Failed to initialize Aliucord :(", th)
+        error(appActivity, "Failed to initialize DHCord :(", th)
         // Delete file so it is reinstalled the next time
         try {
-            File(appActivity.codeCacheDir, "Aliucord.zip").delete()
+            File(appActivity.codeCacheDir, "DHCord.zip").delete()
         } catch (ignored: Throwable) {
         }
     }
@@ -130,12 +130,12 @@ private fun init(appActivity: AppActivity) {
  */
 private fun useLocalDex(appActivity: AppActivity, dexFile: File): Boolean {
     if (appActivity.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-        val settingsFile = File(BASE_DIRECTORY, "settings/Aliucord.json")
+        val settingsFile = File(BASE_DIRECTORY, "settings/DHCord.json")
         if (settingsFile.exists()) {
             val useLocalDex = settingsFile.readText().let {
                 it.isNotEmpty() && JSONObject(it).let { json -> json.has(ALIUCORD_FROM_STORAGE_KEY) && json.getBoolean(ALIUCORD_FROM_STORAGE_KEY) }
             }
-            if (useLocalDex) File(BASE_DIRECTORY, "Aliucord.zip").run {
+            if (useLocalDex) File(BASE_DIRECTORY, "DHCord.zip").run {
                 if (exists()) {
                     Logger.d("Loading dex from $absolutePath")
                     copyTo(dexFile, true)
@@ -153,16 +153,16 @@ private fun useLocalDex(appActivity: AppActivity, dexFile: File): Boolean {
  */
 @Throws(IOException::class)
 fun downloadLatestAliucordDex(outputFile: File) {
-    Logger.d("Downloading Aliucord.zip from $DEX_URL...")
+    Logger.d("Downloading DHCord.zip from $DEX_URL...")
     val conn = URL(DEX_URL).openConnection() as HttpURLConnection
     conn.inputStream.use { it.copyTo(FileOutputStream(outputFile)) }
-    Logger.d("Finished downloading Aliucord.zip")
+    Logger.d("Finished downloading DHCord.zip")
 }
 
 @SuppressLint("DiscouragedPrivateApi") // this private api seems to be stable, thanks to facebook who use it in the facebook app
 @Throws(Throwable::class)
 private fun addDexToClasspath(dex: File, classLoader: ClassLoader) {
-    Logger.d("Adding Aliucord to the classpath...")
+    Logger.d("Adding DHCord to the classpath...")
 
     // https://android.googlesource.com/platform/libcore/+/58b4e5dbb06579bec9a8fc892012093b6f4fbe20/dalvik/src/main/java/dalvik/system/BaseDexClassLoader.java#59
     val pathListField = BaseDexClassLoader::class.java.getDeclaredField("pathList")
@@ -171,7 +171,7 @@ private fun addDexToClasspath(dex: File, classLoader: ClassLoader) {
     val addDexPath = pathList.javaClass.getDeclaredMethod("addDexPath", String::class.java, File::class.java)
         .apply { isAccessible = true }
     addDexPath.invoke(pathList, dex.absolutePath, null)
-    Logger.d("Successfully added Aliucord to the classpath")
+    Logger.d("Successfully added DHCord to the classpath")
 }
 
 /**
