@@ -1,4 +1,4 @@
-package com.aliucord.views;
+package com.dhcord.views;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -7,7 +7,7 @@ import android.view.ContextThemeWrapper;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageButton;
 
-import com.aliucord.Utils;
+import com.dhcord.Utils;
 import com.lytefast.flexinput.R;
 
 /**
