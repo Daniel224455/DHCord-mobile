@@ -4,11 +4,11 @@
  */
 @file:Suppress("UNUSED_PARAMETER")
 
-package com.aliucord
+package com.dhcord
 
 import android.content.Context
 import android.util.Log
-import com.aliucord.Utils.showToast
+import com.dhcord.Utils.showToast
 import com.discord.app.AppLog
 
 /**
@@ -16,7 +16,7 @@ import com.discord.app.AppLog
  * @param module Name of the module
  */
 @Suppress("unused", "MemberVisibilityCanBePrivate", "UNUSED_PARAMETER")
-class Logger(var module: String = "Aliucord") {
+class Logger(var module: String = "DHCord") {
     private fun format(msg: String) = "[$module] $msg"
 
     /**
