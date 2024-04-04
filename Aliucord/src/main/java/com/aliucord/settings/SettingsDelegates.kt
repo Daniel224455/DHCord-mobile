@@ -1,6 +1,6 @@
-package com.aliucord.settings
+package com.dhcord.settings
 
-import com.aliucord.api.SettingsAPI
+import com.dhcord.api.SettingsAPI
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.*
 
