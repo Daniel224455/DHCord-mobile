@@ -1,17 +1,17 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord.settings
+package com.dhcord.settings
 
 import android.view.View
 import android.widget.LinearLayout
-import com.aliucord.PluginManager
-import com.aliucord.fragments.SettingsPage
-import com.aliucord.utils.DimenUtils.dp
-import com.aliucord.widgets.FailedPluginWidget
+import com.dhcord.PluginManager
+import com.dhcord.fragments.SettingsPage
+import com.dhcord.utils.DimenUtils.dp
+import com.dhcord.widgets.FailedPluginWidget
 import com.discord.utilities.color.ColorCompat
 import com.google.android.material.card.MaterialCardView
 import com.lytefast.flexinput.R
@@ -20,7 +20,7 @@ class FailedPluginsPage : SettingsPage() {
     override fun onViewBound(view: View) {
         super.onViewBound(view)
 
-        setActionBarTitle("Plugin Errors")
+        setActionBarTitle("PluginErrors")
 
         PluginManager.failedToLoad.forEach { (file, reason) ->
             linearLayout.addView(MaterialCardView(view.context).apply {
