@@ -1,14 +1,14 @@
 /*
- * This file is part of Aliucord, an Android Discord client mod.
+ * This file is part of dhcord, an Android Discord client mod.
  * Copyright (c) 2021 Juby210 & Vendicated
  * Licensed under the Open Software License version 3.0
  */
 
-package com.aliucord;
+package com.dhcord;
 
 import android.os.Environment;
 
-import com.aliucord.utils.ReflectUtils;
+import com.dhcord.utils.ReflectUtils;
 import com.discord.stores.StoreStream;
 
 @SuppressWarnings("unused")
@@ -33,20 +33,20 @@ public final class Constants {
     }
 
     /** Link to the Aliucord github repo */
-    public static final String ALIUCORD_GITHUB_REPO = "https://github.com/Aliucord/Aliucord";
+    public static final String ALIUCORD_GITHUB_REPO = "https://github.com/Daniel224455/DHCord-mobile";
     /** Code of the Aliucord discord server */
-    public static final String ALIUCORD_SUPPORT = "EsNDvBaHVU";
+    public static final String ALIUCORD_SUPPORT = "KXEPpVWSV3";
     public static final long ALIUCORD_GUILD_ID = 811255666990907402L;
     public static final long SUPPORT_CHANNEL_ID = 811261298997460992L;
     public static final long PLUGIN_SUPPORT_CHANNEL_ID = 847566769258233926L;
     public static final long PLUGIN_LINKS_CHANNEL_ID = 811275162715553823L;
-    public static final long PLUGIN_LINKS_UPDATES_CHANNEL_ID = 845784407846813696L;
+    public static final long PLUGIN_LINKS_UPDATES_CHANNEL_ID = 845784407846813696L;       // this whole part needs to be redone. -Daniel224455.
     public static final long PLUGIN_REQUESTS_CHANNEL_ID = 811275334342541353L;
     public static final long THEMES_CHANNEL_ID = 824357609778708580L;
     public static final long PLUGIN_DEVELOPMENT_CHANNEL_ID = 811261478875299840L;
 
     /** Path of Aliucord folder */
-    public static final String BASE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Aliucord";
+    public static final String BASE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DHCord";
     /** Path of Plugin folder */
     public static final String PLUGINS_PATH = BASE_PATH + "/plugins";
     /** Path of Crashlog folder */
